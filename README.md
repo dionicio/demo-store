@@ -9,10 +9,18 @@ The configuration for running it with docker is shared inside of the files there
 Step for running the app. 
 
 1. install Docker desktop
-2. Clean and install the app
-3. Create the image with Dockerfile
-4. Deploy the Docker compose
+2. Ejecute the database with docker compose inside the project postgresql.yaml
+   docker volume create data-postgres
+   docker-compose -f postgresql.yaml up
+4. Clean and install the app
+mvnw.cmd clean install
+mvnw.cmd spring-boot:run -Dspring-boot.run.arguments="--server.port=8080"
 
+Technologies
+  Java 17
+  Spring Boot 3 (with Spring Web MVC, Spring Data JPA)
+  PostgreSQL
+  Maven 3.9
 
 
 
